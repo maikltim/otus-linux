@@ -1,0 +1,12 @@
+Log created: 2023-06-01T11:59:55.222463000Z
+Process ID:  30270 (0x763e)
+Parent PID:  14163 (0x3753)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: 06_rpm_soft_distribution_hw6_1685620378647_20704
+Arg[3]: --startvm
+Arg[4]: cdb1d57a-76e0-49cb-b0a6-0a27a5d191f3
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
