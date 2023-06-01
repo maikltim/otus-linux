@@ -247,7 +247,7 @@ check_file  client_file
 systemctl status nfs
 ● nfs-server.service - NFS server and services
    Loaded: loaded (/usr/lib/systemd/system/nfs-server.service; enabled; vendor preset: disabled)
-   Active: active (exited) since Wed 2021-12-15 22:01:53 UTC; 1h 4min ago
+   Active: active (exited) since Thu 2023-06-01 11:11:24 UTC; 34s ago
    Process: 3609 ExecStartPost=/bin/sh -c if systemctl -q is-active gssproxy; then systemctl reload gssproxy ; fi (code=exited, status=0/SUCCESS)
    Process: 3592 ExecStart=/usr/sbin/rpc.nfsd $RPCNFSDARGS (code=exited, status=0/SUCCESS)
    Process: 3591 ExecStartPre=/usr/sbin/exportfs -r (code=exited, status=0/SUCCESS)
@@ -264,7 +264,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ```
 ● firewalld.service - firewalld - dynamic firewall daemon
    Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
-   Active: active (running) since Thu 2023-06-01 10:32:15 UTC; 22min ago
+   Active: active (running) since Thu 2023-06-01 11:10:52 UTC; 5min ago
      Docs: man:firewalld(1)
  Main PID: 2134 (firewalld)
    CGroup: /system.slice/firewalld.service
