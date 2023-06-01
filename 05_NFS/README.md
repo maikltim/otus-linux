@@ -247,15 +247,15 @@ check_file  client_file
 systemctl status nfs
 ● nfs-server.service - NFS server and services
    Loaded: loaded (/usr/lib/systemd/system/nfs-server.service; enabled; vendor preset: disabled)
-   Active: active (exited) since Wed 2021-12-15 22:01:53 UTC; 1h 4min ago
+   Active: active (exited) since Thu 2023-06-01 10:41:24 UTC; 1h 4min ago
    Process: 3609 ExecStartPost=/bin/sh -c if systemctl -q is-active gssproxy; then systemctl reload gssproxy ; fi (code=exited, status=0/SUCCESS)
    Process: 3592 ExecStart=/usr/sbin/rpc.nfsd $RPCNFSDARGS (code=exited, status=0/SUCCESS)
    Process: 3591 ExecStartPre=/usr/sbin/exportfs -r (code=exited, status=0/SUCCESS)
    Main PID: 3592 (code=exited, status=0/SUCCESS)
    CGroup: /system.slice/nfs-server.service
 
-Jun 01 10:01:25 nfss systemd[1]: Starting NFS server ...
-Jun 01 10:01:25 nfss systemd[1]: Started NFS server a...
+Jun 01 10:41:24 nfss systemd[1]: Starting NFS server ...
+Jun 01 10:41:24 nfss systemd[1]: Started NFS server a...
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
@@ -264,16 +264,15 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ```
 ● firewalld.service - firewalld - dynamic firewall daemon
    Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
-   Active: active (running) since Thu 2023-06-01 10:32:15 UTC; 22min ago
+   Active: active (running) since Thu 2023-06-01 11:10:52 UTC; 35min ago
      Docs: man:firewalld(1)
  Main PID: 2134 (firewalld)
    CGroup: /system.slice/firewalld.service
            └─2134 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid
 
-Jun 01 10:32:15 localhost.localdomain systemd[1]: Starting firewalld - dynamic firewall daemon...
-Jun 01 10:32:15 localhost.localdomain systemd[1]: Started firewalld - dynamic firewall daemon.
-Jun 01 10:32:15 localhost.localdomain firewalld[2134]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configuration option. It wi... it now.
-Jun 01 10:33:26 localhost.localdomain firewalld[2134]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configuration option. It wi... it now.
+Jun 01 11:10:52 nfss systemd[1]: Starting firewalld -...
+Jun 01 11:10:52 nfss systemd[1]: Started firewalld - ...
+Jun 01 11:10:52 nfss firewalld[2134]: WARNING: Allow...
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
