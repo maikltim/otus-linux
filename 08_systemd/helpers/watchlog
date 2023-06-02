@@ -1,0 +1,5 @@
+#Config file for my watchlog service
+
+#WORD for find in file LOG
+WORD="ALERT"
+LOG=/var/log/watchlog.log
