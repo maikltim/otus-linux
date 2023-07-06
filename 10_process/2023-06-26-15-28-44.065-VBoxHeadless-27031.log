@@ -1,0 +1,12 @@
+Log created: 2023-06-26T15:28:44.651103000Z
+Process ID:  27031 (0x6997)
+Parent PID:  25327 (0x62ef)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: 10_process_processes_1687763982309_12545
+Arg[3]: --startvm
+Arg[4]: a22a8990-019e-4757-96f5-ba23973574cf
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
