@@ -1,6 +1,6 @@
 # 1. Создайте свой кастомный образ nginx на базе alpine. После запуска nginx должен отдавать кастомную страницу (достаточно изменить дефолтную страницу nginx) 
 
-> Директория nginx-alpine послужила build контекстом для создания образа vasiilij/nginx-alpine:1.0
+> Директория nginx-alpine послужила build контекстом для создания образа maikltim/nginx:v1
 >  (ссылка на Docker Hub: https://hub.docker.com/r/maikltim/nginx)
 
 > Для проверки задания выполнить sudo docker run -d -p 81:80 --name nginx -d --rm maikltim/nginx:v1 и перейти на страницу localhost в браузере. 
