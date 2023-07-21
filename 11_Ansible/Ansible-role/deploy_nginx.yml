@@ -1,0 +1,7 @@
+---
+- name: Install & configure NGINX
+  hosts: web
+  become: true
+  
+  roles:
+    - deploy_nginx_8080

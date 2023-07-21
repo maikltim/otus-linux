@@ -1,0 +1,3 @@
+---
+# vars file for deploy_nginx_8080
+nginx_listen_port: 8080
