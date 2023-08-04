@@ -1,0 +1,8 @@
+[Unit]
+Description=Borg /etc backup
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/borg-backup.sh
