@@ -1,0 +1,26 @@
+- name: set up bond0
+  hosts: inetRouter,centralRouter
+  become: yes
+  tasks:
+  - name: set up ifcfg-bond0
+    template:
+      src: ifcfg-bond0.j2
+      dest: /etc/sysconfig/network-scripts/ifcfg-bond0
+      owner: root
+      group: root
+      mode: 0644
+  
+  - name: set up eth1,eth2
+    copy: 
+      src: "{{ item }}" 
+      dest: /etc/sysconfig/network-scripts/
+      owner: root
+      group: root
+      mode: 0644
+    with_items:
+      - ifcfg-eth1.j2
+      - ifcfg-eth2.j2
+  #Перезагрузка хостов 
+  - name: restart hosts for bond0
+    reboot:
+      reboot_timeout: 3600

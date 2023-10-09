@@ -1,0 +1,20 @@
+- name: set up vlan1 
+  #Настройка будет производиться на хостах testClient1 и testServer1
+  hosts: testClient1, testServer1
+  #Настройка производится от root-пользователя
+  become: yes 
+  tasks:
+   #Добавление темплейта в файл /etc/sysconfig/network-scripts/ifcfg-vlan1
+   - name: set up vlan1 
+     template:
+      src: ifcfg-vlan1.j2
+      dest: /etc/sysconfig/network-scripts/ifcfg-vlan1
+      owner: root 
+      group: root
+      mode: 0644 
+
+    #Перезапуск службы NetworkManager
+   - name: restart network for valn1 
+     service:
+      name: NetworkManager 
+      state: restarted

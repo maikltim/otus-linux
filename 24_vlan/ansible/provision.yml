@@ -1,0 +1,29 @@
+- name: Base set up
+#Настройка производится на всех хостах
+  hosts: all
+  become: yes 
+  tasks:
+  #Установка приложений на RedHat-based системах
+  - name: install soft on CentOS
+    yum: 
+      name:
+        -vim 
+        - traceroute
+        - tcpdump
+        - net-tools
+      state: present
+      update_cache: true 
+    when: (ansible_os_family == "RedHat")
+  
+  
+  #Установка приложений на Debiam-based системах
+  - name: install soft on Debiam-based
+    apt: 
+      name:
+        - vim 
+        - traceroute
+        - tcpdump 
+        - net-tools
+      state: present
+      update_cache: true
+      when: (ansible_os_family == "Debian")
