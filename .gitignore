@@ -1,2 +1,6 @@
 .vagrant
+.vagrant/*
 .vscode
+.env
+docker-local.yml
+ping.yml
