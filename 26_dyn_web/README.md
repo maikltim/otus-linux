@@ -537,5 +537,4 @@ wordpress   docker-entrypoint.sh php-fpm     Up      9000/tcp
 
 > ![Alt text](images/images.png)
 
-
 > Как видим все открывается
