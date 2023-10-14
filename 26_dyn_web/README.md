@@ -535,6 +535,7 @@ wordpress   docker-entrypoint.sh php-fpm     Up      9000/tcp
 > Для проверки подключимся к 127.0.0.1:8081 127.0.0.1:8082 127.0.0.1:8083
 
 
-> ![Alt text](images/images.png) 
+> ![Alt text](images/images.png)
+
 
 > Как видим все открывается
