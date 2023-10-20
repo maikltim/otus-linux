@@ -1,0 +1,9 @@
+---
+- name: Копирование файла с локальной машины на удаленную
+  hosts: mysql-replica
+  tasks:
+    - name: Копировать файл с локальной машины на удаленную
+      copy:
+        src:  ../master.sql
+        dest: /home/vagrant/master.sql
+    

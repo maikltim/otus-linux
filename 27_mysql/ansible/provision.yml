@@ -1,0 +1,41 @@
+---
+- name: Install PerconaMysql
+  hosts: all 
+  become: yes
+  gather_facts: true
+  tasks:
+
+    - name: отключить mysql пакет
+      shell: yum -y module disable mysql
+      
+    - name: Импорт GPG-ключа Percona
+      ansible.builtin.rpm_key:
+        state: present
+        key: https://www.percona.com/downloads/RPM-GPG-KEY-percona
+
+    - name: Установка Percona репозитория
+      ansible.builtin.yum:
+        name: https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+        state: present
+        update_cache: true
+
+    - name: Выполнить настройку Percona для MySQL 5.7
+      shell: percona-release setup ps57
+
+    - name: percona-server
+      ansible.builtin.yum:
+        name: Percona-Server-server-57
+        state: present
+        update_cache: yes
+    
+    - name: copy mysql configs
+      ansible.builtin.copy:
+         src: ../conf.d/
+         dest: /etc/my.cnf.d/
+      notify: Restart MySql
+      
+  handlers:
+    - name: Restart MySql
+      systemd:
+        name: mysql
+        state: restarted 
