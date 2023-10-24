@@ -1,6 +1,4 @@
 ---
-# tasks file for install_barman
----
 # Установка необходимых пакетов для работы с postgres и пользователями
   - name: install base tools
     dnf:
@@ -203,7 +201,14 @@
       mode: '0755'
     when: (ansible_hostname == "barman")
 
-  
+  - name: Создать директорию /etc/barman.d
+    file:
+      path: /etc/barman.d
+      state: directory
+      owner: barman
+      group: barman
+      mode: '0755'
+    when: (ansible_hostname == "barman")
 
  # Копируем файл node1.conf
   - name: copy node1.conf
@@ -215,6 +220,7 @@
       mode: '0755'
     when: (ansible_hostname == "barman")
 
+#забрать wal log ( необходимо для проверки бэкапа, если ошибок нет в этих заданиях бэкап работает )
   - name: barman switch-wal node1
     become_user: barman
     shell: barman switch-wal node1
@@ -223,16 +229,4 @@
   - name: barman cron
     become_user: barman
     shell: barman cron
-    when: (ansible_hostname == "barman")
-
-#забрать wal log ( необходимо для проверки бэкапа, если ошибок нет в этих заданиях бэкап работает )
-  - name: barman switch-wal node1 
-    become_user: barman
-    shell: barman switch-wal node1 
-    when: (ansible_hostname == "barman")
-
-
-  - nmae: barman cron
-    become_user: barman 
-    shell: barman cron 
     when: (ansible_hostname == "barman")
